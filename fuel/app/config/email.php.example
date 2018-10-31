@@ -1,0 +1,58 @@
+<?php
+
+return array(
+
+	'defaults' => array(
+
+		/**
+		 * Mail driver (mail, smtp, sendmail, noop)
+		 */
+		'driver'		=> 'mail',
+
+		/**
+		 * Default sender details
+		 */
+		'from'		=> array(
+			'email'		=> 'torut@ebase-sl.jp',
+			'name'		=> false,
+		),
+
+		/**
+		 * Wordwrap size, set to null, 0 or false to disable wordwrapping
+		 */
+		'wordwrap'	=> false,
+
+	),
+
+	'setups' => array(
+		'default' => array(),
+		'activity_notice' => array(
+			// 直前チェックエラー時の設定
+			/**
+			 * Mail driver (mail, smtp, sendmail, noop)
+			 */
+			'driver'		=> 'smtp',
+			'smtp' => array(
+				'host' => 'localhost',
+				'port' => 25,
+			),
+			'newline'	=> "\r\n",
+
+			/**
+			 * Default sender details
+			 */
+			'from'		=> array(
+				'email'		=> 'torut@ebase-sl.jp',
+				'name'		=> false,
+			),
+
+			/**
+			 * Wordwrap size, set to null, 0 or false to disable wordwrapping
+			 */
+			'wordwrap'	=> false,
+
+			'charset' => 'ISO-2022-JP',
+			'encofing' => '7bit',
+		),
+	),
+);

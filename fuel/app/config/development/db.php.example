@@ -1,0 +1,31 @@
+<?php
+
+return array(
+	'default' => array(
+		'connection'  => array(
+			'dsn'        => 'mysql:host=localhost;dbname=tuh_lavage-history;',
+			'hostname' => 'localhost',
+			'database' => 'tuh_lavage-history',
+			'username'   => 'tuh_lavage',
+			'password'   => 'lavageh1s10ry',
+		),
+	),
+
+	'clinical-record' => array(
+		'connection'  => array(
+			'dsn'        => 'mysql:host=localhost;dbname=cleaning-history;',
+			'hostname' => 'localhost',
+			'database' => 'cleaning-history',
+			'username'   => 'cleaning-history',
+			'password'   => 'lavageh1s10ry',
+		),
+	),
+
+	'patient-record' => array(
+		'connection'  => array(
+			'dsn'        => 'mysql:host=localhost;dbname=patient-record;',
+			'username'   => 'testuser',
+			'password'   => 'testpass',
+		),
+	),
+);

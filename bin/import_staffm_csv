@@ -1,0 +1,108 @@
+#!/bin/bash
+
+# usage:
+# import_staffm_csv FUEL_ROOT CREDENTIAL_FILE MOUNT_DEVICE MOUNT_POSITION COPY_TO
+# スクリプト概要
+#   MOUNT_DEVICE を 一旦マウントしてから exp_tstaffm.csv を COPY_TO ディレクトリにコピーする。
+#   コピーできたら fuel_import_script を実行してデータを取り込む。
+# 引数の内容
+#   FUEL_ROOT: 当スクリプトがあるディレクトリの1階層上のディレクトリを絶対パスで指定
+#   CREDENTIAL_FILE: マウントするときのユーザー名、パスワードが記載されたファイル(FUEL_ROOT からの相対パス)
+#   MOUNT_DEVICE: マウントするデバイス
+#   MOUNT_POSITION: マウント先のディレクトリ(FUEL_ROOTからの相対パス)
+#   COPY_TO: csv ファイルのコピー先ディレクトリ(FUEL_ROOTからの相対パス)
+
+# FUEL_ROOT の取得
+fuel_root=$1
+# credentials の絶対パス
+credential_file=$fuel_root/$2
+# マウントするデバイス
+mount_device=$3
+# マウント先の絶対パス
+mount_pos=$fuel_root/$4
+# csvコピー先ディレクトリの絶対パス
+csv_copy_to=$fuel_root/$5
+
+echo 'start ' `date '+%Y-%m-%d %H:%M:%S'`;
+
+# echo $fuel_root
+# echo $credential_file
+# echo $mount_device
+# echo $mount_pos
+
+# csv ファイル名
+csv_filename='exp_tstaffm.csv'
+
+# エラー時のメール送信先
+error_mail_to='torut@ebase-sl.jp'
+
+# fuel側の取り込みスクリプトの実行文
+fuel_import_script='/usr/bin/php oil refine import_staffm_csv'
+
+# データ取り込み後に退避するcsvファイル名につける postfix
+old_postfix='.old'
+
+if [ ! -e $credential_file ] ;
+then
+	echo 'credential file not found';
+# 	mail -s "[CleaningHistory] import_staffm_csv script error" $error_mail_to <<EOF
+# script error : credential file not found.
+# EOF
+	exit 1;
+fi
+
+if /bin/mount -t cifs -o credentials=$credential_file $mount_device $mount_pos ;
+then
+	# mount success
+	echo 'mount success.'
+else
+	# mount failed
+	echo 'mount failed.'
+# 	mail -s "[CleaningHistory] import_staffm_csv script error" $error_mail_to <<EOF
+# script error : mount failed.
+# EOF
+	exit 1
+fi
+
+if /usr/bin/rsync -a --delete $mount_pos/$csv_filename $csv_copy_to ;
+then
+	# rsync success
+	echo 'rsync success.'
+	/bin/chmod 666 $csv_copy_to/$csv_filename
+else
+	# rsync failed
+	echo 'rsync failed.'
+# 	mail -s "[CleaningHistory] import_staffm_csv script error" $error_mail_to <<EOF
+# script error : rsync failed.
+# EOF
+	exit 1
+fi
+
+if /bin/umount $mount_pos ;
+then
+	# umount success
+	echo 'unmount success.'
+else
+	echo 'unmount failed.'
+	exit 1
+fi
+
+# trigger fuel script
+cd $fuel_root
+if $fuel_import_script ;
+then
+	# success
+	echo 'fuel import script success.'
+	/bin/mv $csv_copy_to/$csv_filename $csv_copy_to/$csv_filename$old_postfix
+else
+	# failed
+	echo 'fuel import script failed.'
+# 	mail -s "[CleaningHistory] import_staffm_csv script error" $error_mail_to <<EOF
+# script error : fuel import script failed.
+# EOF
+	exit 1
+fi
+
+echo 'end: ' `date '+%Y-%m-%d %H:%M:%S'`;
+
+exit 0
