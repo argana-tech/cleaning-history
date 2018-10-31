@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PreferenceSpecifiers</key>
+	<array>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>設定</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>スキャン音</string>
+			<key>Key</key>
+			<string>SCAN_SOUND_VALUE</string>
+			<key>DefaultValue</key>
+			<string>scan1</string>
+			<key>Values</key>
+			<array>
+				<string>scan_1</string>
+				<string>scan_2</string>
+				<string>scan_3</string>
+				<string>scan_4</string>
+				<string>1256</string>
+				<string>1108</string>
+			</array>
+			<key>Titles</key>
+			<array>
+				<string>スキャン音1</string>
+				<string>スキャン音2</string>
+				<string>スキャン音3</string>
+				<string>スキャン音4</string>
+				<string>電子音 (２回鳴る)</string>
+				<string>シャッター音</string>
+			</array>
+		</dict>
+		<dict>
+			<key>Title</key>
+			<string></string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>FooterText</key>
+			<string>Copyright © Tottori University Hospital 2013</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+			<key>DefaultValue</key>
+			<string>1.0.0</string>
+			<key>Title</key>
+			<string>バージョン</string>
+			<key>Key</key>
+			<string>sbVersion</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+			<key>DefaultValue</key>
+			<string>1</string>
+			<key>Title</key>
+			<string>ビルド</string>
+			<key>Key</key>
+			<string>sbBuild</string>
+		</dict>
+	</array>
+	<key>StringsTable</key>
+	<string>Root</string>
+</dict>
+</plist>

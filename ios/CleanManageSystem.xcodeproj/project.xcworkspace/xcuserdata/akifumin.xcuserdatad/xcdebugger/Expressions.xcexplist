@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[CustomAlertViewController viewDidLoad]:CustomAlertViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[ScanActionViewController searchPatInfoResult:errorMessage:]:ScanActionViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[ScanActionViewController searchWasherResult:errorMessage:]:ScanActionViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "+[HTTPRequestUtil buildUserAgent]:HTTPRequestUtil.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[[UIDevice currentDevice] systemVersion]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ScanActionViewController connection:didReceiveData:]:ScanActionViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.activityId">
+            </PersistentString>
+            <PersistentString
+               value = "[NSNull null]== [savedMessage class]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ScopeInfoDto getScopeInfoCell:cellIdentifier:]:ScopeInfoDto.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[ScanActionViewController searchPatientInfo:]:ScanActionViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[match range]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ScanActionViewController willPresentAlertView:]:ScanActionViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "alertView.tag">
+            </PersistentString>
+            <PersistentString
+               value = "VALIDATE_LAST_ACTION_CONFIRM">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[LoginViewController clickLogin]:LoginViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[ScanActionViewController observeValueForKeyPath:ofObject:change:context:]:ScanActionViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[MainMenuViewController getActionMenus]:MainMenuViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "+[ActionField create:]:ActionField.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[BarcodeOverlay setTitle:]:BarcodeOverlay.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[Setting isScanLight]">
+            </PersistentString>
+            <PersistentString
+               value = "UI_USER_INTERFACE_IDIOM()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[LoginViewController clickScanDelay]:LoginViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = " reader.navigationController.navigationItem">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[LoginViewController connection:didReceiveData:]:LoginViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[ScanActionViewController getActionFieldCell:cellIdentifier:]:ScanActionViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[SearchWasherInfo connection:didReceiveData:]:SearchWasherInfo.m">
+      </ContextState>
+      <ContextState
+         contextName = "+[HTTPRequestUtil creatReauest:url:]:HTTPRequestUtil.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[SearchPatInfo connection:didReceiveData:]:SearchPatInfo.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[patInfoDictionary class]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[LoginViewController willPresentAlertView:]:LoginViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "label.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ScanActionViewController alertView:clickedButtonAtIndex:]:ScanActionViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "alertView.tag">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "+[NSString(Replace) replaceBr:]:NSString+Replace.m">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
